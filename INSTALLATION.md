@@ -99,9 +99,18 @@ When GitHub copies a Project, it copies views, Project custom fields, configured
 
 ## 6. Configure Project intake and workflows
 
-Configure an auto-add workflow for each repository that participates in the Project. For a repository whose Issues are managed entirely with ODTS, use the filter `is:issue is:open`.
+The Project template already supplies the prepared views and these status workflows:
+
+- **Item added to project → Status: New**;
+- **Issue closed → Status: Done**.
+
+Verify that both workflows were copied and are enabled. `In Progress` and `Stasis` remain manual decisions. When an Issue is reopened, choose `New`, `In Progress`, or `Stasis` according to its actual state.
+
+Configure an auto-add workflow for each repository that participates in the new Project. For a repository whose Issues are managed entirely with ODTS, use the filter `is:issue is:open`. GitHub does not copy Auto-add workflows from a Project template.
 
 Repository and team links do not add Issues to the Project. Auto-add is a separate workflow under **Project menu → Workflows → Auto-add to project**. GitHub's built-in auto-add filter currently supports issue/PR state, labels, reasons, and assignees, but not the organization issue type. If a repository also contains non-ODTS Issues, either add them manually or use a genuinely contextual intake label; do not recreate Epic, Item, or Task as labels.
+
+Auto-add does not import existing matching Issues when it is enabled. Add existing Issues manually or update them after enabling the workflow. Do not enable Auto-archive by default because ODTS keeps completed history visible in the **All** view.
 
 Verify the Project status values:
 

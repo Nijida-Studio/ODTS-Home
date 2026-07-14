@@ -195,6 +195,15 @@ The GitHub Project **ODTS-Specification** is the reference Project template. A p
 
 Project-level custom fields MUST NOT duplicate the organization issue fields with the same meaning.
 
+The reference Project template SHOULD provide these status workflows:
+
+- when an item is added, set Status to `New`;
+- when an Issue is closed, set Status to `Done`.
+
+Transitions to `In Progress` and `Stasis` SHOULD remain deliberate manual decisions. A reopened Issue SHOULD be reassessed manually because its correct status may be `New`, `In Progress`, or `Stasis`.
+
+Auto-add MUST be configured for the target repository after creating a Project from the template because GitHub does not copy Auto-add workflows. Auto-archive SHOULD remain disabled by default so completed history stays visible in the `All` view.
+
 ## 10. Traceability and completion
 
 Commits and pull requests SHOULD reference the Task they implement. A change SHOULD remain traceable to one Parent Item; work crossing multiple Parent Items SHOULD be split where practical.

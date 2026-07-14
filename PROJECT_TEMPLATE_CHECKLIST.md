@@ -26,21 +26,24 @@ This checklist covers the work that must be completed in the GitHub UI for the *
 
 ## Views
 
-- [ ] Create **Backlog** for Epic and Item; exclude Task.
-- [ ] Create **Work** for Item and Task; exclude Epic.
-- [ ] Create **My View** filtered to the current user's assignments.
-- [ ] Create **All** without excluding completed issues.
+- [ ] Verify that the template's prepared **Backlog** view contains Epic and Item and excludes Task.
+- [ ] Verify that the template's prepared **Work** view contains Item and Task and excludes Epic.
+- [ ] Verify that the template's prepared **My View** is filtered to the current user's assignments.
+- [ ] Verify that the template's prepared **All** view does not exclude completed issues.
 - [ ] Show `Type`, the relevant subtype fields, `Status`, `Assignees`, and `Parent issue` where useful; add optional team planning fields only when the team uses them.
 - [ ] Verify that filters use native issue types and organization issue fields.
 
 ## Workflows
 
-- [ ] Configure item-added behavior so new items start at `New` where appropriate.
-- [ ] Configure closed issues to move to `Done` where appropriate.
-- [ ] Decide and document how reopened issues leave `Done`.
-- [ ] Configure a separate auto-add workflow for each repository participating in the Project; use `is:issue is:open` when all repository Issues follow ODTS.
+- [ ] In the Project template, enable **Item added to project → Status: New**.
+- [ ] In the Project template, enable **Issue closed → Status: Done**.
+- [ ] Keep transitions to `In Progress` and `Stasis` manual because they express a deliberate team decision.
+- [ ] Keep the status after reopening manual; choose `New`, `In Progress`, or `Stasis` according to the actual situation.
+- [ ] Do not enable auto-archive by default because the **All** view preserves completed history.
+- [ ] After creating a Project from the template, configure a separate auto-add workflow for each participating repository; use `is:issue is:open` when all repository Issues follow ODTS.
 - [ ] Confirm that Epic, Item, and Task issues are admitted. Do not assume that GitHub's auto-add filter can filter by organization issue type.
-- [ ] Document that auto-add workflows must be recreated after copying the template.
+- [ ] Add pre-existing matching Issues manually; Auto-add only reacts when an Issue is created or updated after the workflow is enabled.
+- [ ] Document that Auto-add workflows must be recreated after copying the template.
 
 ## Template publication
 
