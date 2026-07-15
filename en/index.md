@@ -10,7 +10,7 @@ permalink: /en/
 translations: { de: /de/, en: /en/, ja: /ja/ }
 knowledge_sections:
   - title: Explore ODTS
-    excerpt: Four concise entry points lead from the model to practical use.
+    excerpt: Three concise entry points lead from the model to practical use.
     items:
       - { title: Work model, text: "Epic, Item, and Task form a small, unambiguous hierarchy.", url: /en/work-model/ }
       - { title: Workflow, text: "A skeleton, basic documentation, and tests precede the complete implementation.", url: /en/workflow/ }

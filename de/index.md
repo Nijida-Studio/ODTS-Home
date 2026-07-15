@@ -13,7 +13,7 @@ translations:
   ja: /ja/
 knowledge_sections:
   - title: ODTS kennenlernen
-    excerpt: Vier kurze Einstiege führen vom Modell zur praktischen Verwendung.
+    excerpt: Drei kurze Einstiege führen vom Modell zur praktischen Verwendung.
     items:
       - title: Arbeitsmodell
         text: Epic, Item und Task bilden eine kleine, eindeutige Hierarchie.

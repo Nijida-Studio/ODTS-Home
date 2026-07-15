@@ -10,7 +10,7 @@ permalink: /ja/
 translations: { de: /de/, en: /en/, ja: /ja/ }
 knowledge_sections:
   - title: ODTSを知る
-    excerpt: モデルから実際の利用まで、4つの短い入口を用意しています。
+    excerpt: モデルから実際の利用まで、3つの短い入口を用意しています。
     items:
       - { title: 作業モデル, text: "Epic、Item、Taskが小さく明確な階層を作ります。", url: /ja/work-model/ }
       - { title: 作業手順, text: "完全な実装より前に骨格、基本文書、テストを作ります。", url: /ja/workflow/ }
