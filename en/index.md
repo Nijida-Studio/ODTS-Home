@@ -21,4 +21,6 @@ ODTS helps teams describe work before implementing it and keep the result tracea
 
 > ODTS is a specification, not software. Its GitHub configuration is the first reference implementation, not its definition.
 
-> **Documentation status:** This human-readable presentation describes a development state from before ODTS 1.0. [ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification) is always authoritative. Its `main` branch is currently the unreleased ODTS 1.0 release candidate. This documentation may differ and may contain errors or older artifacts.
+> **Documentation status:** This human-readable presentation describes ODTS 1.9.5. [ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification) is always authoritative. During an update, this documentation may temporarily differ from the current reference implementation.
+
+`ODTS-Home` is licensed under the Apache License 2.0.
