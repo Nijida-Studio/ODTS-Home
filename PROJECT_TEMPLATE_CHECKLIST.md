@@ -21,6 +21,7 @@ This checklist covers the work that must be completed in the GitHub UI for the *
 
 - [ ] Add the organization issue fields to the Project.
 - [ ] Keep GitHub's native `Type`, `Parent issue`, `Assignees`, and repository fields available where useful.
+- [ ] Do not add an ODTS version or repository-status field; those values belong to each Issue and repository, not to the Project.
 - [ ] Configure status values `New`, `Stasis`, `In Progress`, and `Done`.
 - [ ] Remove Project custom fields that duplicate an organization issue field.
 
