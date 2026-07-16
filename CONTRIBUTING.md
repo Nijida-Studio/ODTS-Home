@@ -20,4 +20,4 @@ Keep the Task, code documentation, and tests synchronized with changes in behavi
 
 A Task is complete when its result is implemented, its documentation is accurate, tests exist where possible, exceptions are explained, deferred work is tracked, and the required review has been completed.
 
-See the [ODTS Specification](SPECIFICATION.md) for the normative model.
+See the human-readable [ODTS documentation snapshot](SPECIFICATION.md) for guidance. The authoritative current behavior is defined by [ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification).
