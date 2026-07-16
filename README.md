@@ -1,7 +1,7 @@
 # ODTS
 
 > [!IMPORTANT]
-> **Documentation status:** `ODTS-Home` is the human-readable documentation and currently describes a pre-1.0 development state. The authoritative source is always [`ODTS-Specification`](https://github.com/Nijida-Studio/ODTS-Specification). Its `main` branch is currently the unreleased ODTS 1.0 release candidate. Until a versioned release is published, this documentation may differ from the current specification and may contain errors or older artifacts.
+> **Documentation status:** `ODTS-Home` is the human-readable documentation for ODTS 1.9.5. The authoritative source is always [`ODTS-Specification`](https://github.com/Nijida-Studio/ODTS-Specification). This documentation may temporarily differ from the current reference implementation while an update is being synchronized.
 
 ODTS is a narrow reference framework for agile project management. It helps developers plan work as issues and establish code structure, documentation, and tests before completing the implementation.
 
@@ -23,4 +23,4 @@ ODTS uses two separate GitHub templates:
 1. The **ODTS-Specification repository template** provides the reusable GitHub configuration without an ODTS README or other documentation that must be deleted from the new repository.
 2. The **ODTS-Specification Project template** creates the planning views and workflows.
 
-Organization-level issue types and issue fields are shared infrastructure. They are configured once for the organization and are not replaced by either template.
+Organization-level issue types and subtype fields are shared infrastructure. Repository-specific ODTS configuration and versioned issue metadata remain within each repository and are not replaced by a Project.

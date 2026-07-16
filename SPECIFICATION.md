@@ -1,7 +1,7 @@
-# ODTS Documentation Snapshot
+# ODTS 1.9.5 Documentation Snapshot
 
 > [!IMPORTANT]
-> This document is a human-readable documentation snapshot of a pre-1.0 ODTS development state. It is not authoritative. The authoritative source is always [`ODTS-Specification`](https://github.com/Nijida-Studio/ODTS-Specification). Its `main` branch is currently the unreleased ODTS 1.0 release candidate. This document may contain differences, errors, or older artifacts.
+> This document is a human-readable documentation snapshot of ODTS 1.9.5. It is not authoritative. The authoritative source is always [`ODTS-Specification`](https://github.com/Nijida-Studio/ODTS-Specification). This document may temporarily differ from the current reference implementation while an update is being synchronized.
 
 ODTS is a narrow reference framework for agile project management. It is designed primarily for software development, while its planning model can also be used for other kinds of projects.
 
@@ -18,7 +18,7 @@ ODTS defines:
 - subtypes for each hierarchy level;
 - optional team-defined planning fields;
 - a documentation-and-test-first implementation workflow;
-- a GitHub reference mapping for issue types, issue fields, labels, repository templates, and Project templates.
+- a GitHub reference mapping for issue types, issue fields, labels, repository configuration, versioned issue metadata, repository templates, and Project templates.
 
 ODTS does not prescribe a programming language, test framework, release model, branching strategy, or complete set of repository labels.
 
@@ -180,11 +180,19 @@ The organization MUST provide these single-select issue fields:
 
 These fields are configured in the organization settings under **Planning → Issue fields**. Subtype fields MUST be pinned only to their corresponding issue type.
 
-Issue fields are the source of truth. ODTS templates MUST NOT duplicate them as dropdowns in the issue body. Optional organization fields such as Priority, Effort, Start date, and Target date MAY be added according to team needs.
+Organization issue fields are the source of truth for ODTS subtypes. ODTS templates MUST NOT duplicate subtype fields as dropdowns in the issue body. Optional organization fields such as Priority, Effort, Start date, and Target date MAY be added according to team needs.
 
 ### 9.3 Repository configuration
 
-Each participating repository SHOULD:
+Each participating repository MUST contain `.github/odts.yml`. Its `odts.version` value defines the current ODTS version expected for newly created issues in that repository.
+
+Each Epic, Item, and Task Issue Form MUST contain a required input with the identifier `odts_version` and the label `ODTS Version`. Its prefilled value MUST match `odts.version` in `.github/odts.yml`.
+
+When the form is submitted, GitHub includes the field and its value in the Issue body. That submitted value records the ODTS version under which the individual Issue was created. Existing Issue values MUST NOT be changed merely because the repository is upgraded. An existing Issue MAY receive a new value only as part of an explicit migration of that Issue.
+
+When a repository adopts another ODTS version, its administrator or compatible tooling MUST update `.github/odts.yml` and all ODTS Issue Forms together. New Issues then record the new version while existing Issues preserve their historical version.
+
+Each participating repository SHOULD also:
 
 - originate from the ODTS repository template;
 - enable Issues;
@@ -194,9 +202,11 @@ Each participating repository SHOULD:
 
 ### 9.4 Project configuration
 
-The GitHub Project **ODTS-Specification** is the reference Project template. A project created from it SHOULD provide shared views and workflows, while organization issue fields remain the source of truth for ODTS subtypes and any optional team planning fields.
+The GitHub Project **ODTS-Specification** is the reference Project template. A Project created from it SHOULD provide shared views and workflows, while organization issue fields remain the source of truth for ODTS subtypes and any optional team planning fields.
 
 Project-level custom fields MUST NOT duplicate the organization issue fields with the same meaning.
+
+A Project MUST NOT be used as the source of an ODTS version. Projects are views over Issues and MAY combine Issues from repositories or historical periods that use different ODTS versions. ODTS conformance is therefore evaluated from the repository configuration and the version recorded in each Issue, not from Project metadata.
 
 The reference Project template SHOULD provide these status workflows:
 
@@ -206,6 +216,12 @@ The reference Project template SHOULD provide these status workflows:
 Transitions to `In Progress` and `Stasis` SHOULD remain deliberate manual decisions. A reopened Issue SHOULD be reassessed manually because its correct status may be `New`, `In Progress`, or `Stasis`.
 
 Auto-add MUST be configured for the target repository after creating a Project from the template because GitHub does not copy Auto-add workflows. Auto-archive SHOULD remain disabled by default so completed history stays visible in the `All` view.
+
+### 9.5 Optional repository feedback
+
+An organization MAY define a repository Custom Property named `ODTS Status` as a non-required string value. Souran or other compatible tooling MAY populate it with a human-readable summary of the detected ODTS version and validation state.
+
+`ODTS Status` is derived feedback for repository administrators. It is not configuration and MUST NOT be used as the source of the repository or Issue target state. Its absence, an empty value, or a stale value does not by itself change ODTS conformance. Tooling MUST derive the expected repository state from `.github/odts.yml` and the expected state of an individual Issue from the `ODTS Version` value preserved in that Issue.
 
 ## 10. Traceability and completion
 
@@ -221,5 +237,5 @@ A Task is complete only when:
 
 ## 11. Reference repositories
 
-- [ODTS-Home](https://github.com/Nijida-Studio/ODTS-Home) — normative description, user documentation, contribution workflow, and installation guide.
-- [ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification) — bare prepared reference implementation and repository template.
+- [ODTS-Home](https://github.com/Nijida-Studio/ODTS-Home) — human-readable documentation, contribution workflow, and installation guide.
+- [ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification) — authoritative prepared reference implementation and repository template.

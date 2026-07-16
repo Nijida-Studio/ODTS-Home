@@ -67,8 +67,11 @@ Before the first installation, an administrator of `Nijida-Studio/ODTS-Specifica
 2. Choose **Use this template** and create a new repository in the target organization.
 3. Enable Issues in the new repository.
 4. Verify that the Epic, Item, and Task issue forms automatically select ODTS EPIC, ODTS ITEM, and ODTS TASK respectively.
+5. Verify that `.github/odts.yml` declares the intended `odts.version` and that the prefilled `ODTS Version` input in every Issue Form has the same value.
 
 The repository template intentionally contains no ODTS project description or contribution documentation that must be removed after creation. Add the new project's own README and contribution documentation when needed. Organization issue types and fields remain shared organization settings.
+
+When updating a repository to another ODTS version, update `.github/odts.yml` and all three Issue Forms together. Do not rewrite the `ODTS Version` value in existing Issues unless those Issues are intentionally migrated.
 
 ## 4. Adapt labels in the new repository
 
@@ -85,7 +88,13 @@ ODTS reference labels are:
 
 Add, remove, rename, and recolor labels for the repository as necessary. Do not use labels to duplicate Epic, Item, Task, subtype, priority, or status.
 
-## 5. Create the GitHub Project from the template
+## 5. Optional repository status feedback
+
+An organization may create a non-required string Custom Property named `ODTS Status`. Souran or other compatible tooling can update it with a human-readable summary of the repository's detected ODTS version and validation state.
+
+This property is only feedback for repository administrators. Do not use it as configuration or as a source of truth. A repository remains fully usable without the property.
+
+## 6. Create the GitHub Project from the template
 
 1. In the target organization, create a new Project.
 2. Select the organization template named **ODTS-Specification**. If it is not offered, open the reference Project and choose **Make a copy**.
@@ -97,7 +106,9 @@ Add, remove, rename, and recolor labels for the repository as necessary. Do not 
 
 When GitHub copies a Project, it copies views, Project custom fields, configured workflows other than auto-add workflows, and optional draft issues. It does not copy the original items, collaborators, team links, repository links, or auto-add workflows. Reconfigure those items after every installation.
 
-## 6. Configure Project intake and workflows
+Do not add an ODTS version field to the Project. A Project can show Issues from repositories or historical periods that use different ODTS versions; the version belongs to the individual Issue and repository configuration.
+
+## 7. Configure Project intake and workflows
 
 The Project template already supplies the prepared views and these status workflows:
 
@@ -128,13 +139,14 @@ Recommended minimum views:
 
 Do not create Project-level fields that duplicate organization issue fields. Add the organization fields to the Project when the team uses them.
 
-## 7. Validate the installation
+## 8. Validate the installation
 
 Create one test issue of each type and confirm:
 
 - ODTS EPIC shows `ODTS Epic Subtype`;
 - ODTS ITEM shows `ODTS Item Subtype`;
 - ODTS TASK shows `ODTS Task Subtype`;
+- every test Issue body contains `ODTS Version` with the value declared by `.github/odts.yml`;
 - optional Priority, Effort, Start date, and Target date fields appear only when configured for the team;
 - every test issue is added to the Project;
 - parent/sub-issue relationships can represent Epic → Item → Task;
@@ -143,7 +155,7 @@ Create one test issue of each type and confirm:
 
 Delete or close the test issues after validation.
 
-## 8. Begin working with ODTS
+## 9. Begin working with ODTS
 
 For implementation work:
 
