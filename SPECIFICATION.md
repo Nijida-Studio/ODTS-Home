@@ -1,10 +1,13 @@
-# ODTS Specification
+# ODTS Documentation Snapshot
+
+> [!IMPORTANT]
+> This document is a human-readable documentation snapshot of a pre-1.0 ODTS development state. It is not authoritative. The authoritative source is always [`ODTS-Specification`](https://github.com/Nijida-Studio/ODTS-Specification). Its `main` branch is currently the unreleased ODTS 1.0 release candidate. This document may contain differences, errors, or older artifacts.
 
 ODTS is a narrow reference framework for agile project management. It is designed primarily for software development, while its planning model can also be used for other kinds of projects.
 
 Its central purpose is to help developers produce maintainable documentation and tests as part of implementation work—not as optional cleanup after the code is finished.
 
-This document is the normative ODTS description and is maintained in ODTS-Home. The prepared reference implementation is published separately as the **ODTS-Specification** GitHub repository template and the **ODTS-Specification** GitHub Project template.
+This document is maintained in ODTS-Home as a human-readable description. The authoritative behavior is defined by the **ODTS-Specification** GitHub repository template and the associated **ODTS-Specification** GitHub Project template.
 
 ## 1. Scope
 

@@ -1,5 +1,8 @@
 # ODTS
 
+> [!IMPORTANT]
+> **Documentation status:** `ODTS-Home` is the human-readable documentation and currently describes a pre-1.0 development state. The authoritative source is always [`ODTS-Specification`](https://github.com/Nijida-Studio/ODTS-Specification). Its `main` branch is currently the unreleased ODTS 1.0 release candidate. Until a versioned release is published, this documentation may differ from the current specification and may contain errors or older artifacts.
+
 ODTS is a narrow reference framework for agile project management. It helps developers plan work as issues and establish code structure, documentation, and tests before completing the implementation.
 
 ODTS is primarily intended for software development, but the Epic → Item → Task planning model can also be used for other projects.
@@ -11,7 +14,7 @@ ODTS is primarily intended for software development, but the Epic → Item → T
 - Use the [contribution workflow](CONTRIBUTING.md) when implementing work with ODTS.
 - Use the [Project template checklist](PROJECT_TEMPLATE_CHECKLIST.md) when maintaining the reference Project.
 
-`ODTS-Home` is the source of truth for the ODTS description and user documentation. `ODTS-Specification` contains only the prepared reference implementation.
+`ODTS-Specification` is the authoritative source for ODTS behavior. `ODTS-Home` provides human-readable explanations and additional documentation and may temporarily differ from the current specification.
 
 ## The two templates
 
