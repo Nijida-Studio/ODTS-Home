@@ -19,8 +19,14 @@ translations: { de: /de/einrichtung/, en: /en/setup/, ja: /ja/setup/ }
 
 The repository template intentionally contains no ODTS explanation that a new project would first have to delete. Documentation remains here in `ODTS-Home`.
 
+## Versions
+
+`.github/odts.yml` declares the current ODTS version of a repository. Every new Epic, Item, and Task carries that version as a visible `ODTS Version` value in the Issue body. When a repository is updated, existing Issues retain their original version; only new or explicitly migrated Issues use the new version.
+
+An optional repository Custom Property named `ODTS Status` can provide visible feedback from Souran or other tooling to administrators. It is not configuration or a source of truth. GitHub Projects do not receive an ODTS version because they are only views that may combine Issues from different repositories and historical periods.
+
 ## After copying
 
-Auto-add must be configured for every target repository because GitHub does not copy that workflow from a Project template. Validate the installation with one Epic, Item, and Task, including parent relationships and subtypes.
+Auto-add must be configured for every target repository because GitHub does not copy that workflow from a Project template. Validate the installation with one Epic, Item, and Task, including parent relationships, subtypes, and the version value stored in each Issue body.
 
 The [installation guide](https://github.com/Nijida-Studio/ODTS-Home/blob/main/INSTALLATION.md) contains the complete procedure.
