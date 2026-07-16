@@ -30,4 +30,4 @@ ODTS hilft Teams, Arbeit zuerst verständlich zu beschreiben und sie anschließe
 
 > ODTS ist eine Spezifikation, keine Software. Die GitHub-Konfiguration ist ihre erste Referenzumsetzung, nicht ihre Definition.
 
-Die normative Fassung liegt im Repository [ODTS-Home](https://github.com/Nijida-Studio/ODTS-Home/blob/main/SPECIFICATION.md) und steht unter der Apache License 2.0.
+> **Dokumentationsstand:** Diese menschenlesbare Darstellung beschreibt einen Entwicklungsstand vor ODTS 1.0. Maßgeblich ist immer [ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification). Dessen `main`-Branch ist derzeit der noch unveröffentlichte ODTS-1.0-Release-Candidate. Diese Dokumentation kann davon abweichen und Fehler oder ältere Artefakte enthalten.

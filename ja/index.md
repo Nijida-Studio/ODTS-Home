@@ -21,4 +21,4 @@ ODTSは、チームが実装の前に作業を理解できる形で記述し、�
 
 > ODTSはソフトウェアではなく仕様です。GitHub構成は最初のリファレンス実装であり、ODTSそのものの定義ではありません。
 
-規範となる文書はApache License 2.0のもとで[ODTS-Home](https://github.com/Nijida-Studio/ODTS-Home/blob/main/SPECIFICATION.md)に管理されています。
+> **文書の状態:** この読みやすい説明はODTS 1.0以前の開発状態を記述しています。常に[ODTS-Specification](https://github.com/Nijida-Studio/ODTS-Specification)が正式な基準です。その`main`ブランチは現在、未公開のODTS 1.0リリース候補です。この文書には現在の仕様との差異、誤り、古い内容が含まれる場合があります。
